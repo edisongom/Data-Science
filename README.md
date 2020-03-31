@@ -1,1 +1,1 @@
-# Estad-stica
+# Estadística
