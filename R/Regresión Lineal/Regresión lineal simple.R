@@ -1,9 +1,12 @@
+
+#Contiene datos sobre la circunferencia (en pulgadas), altura (en pies) y volumen (en pies cúbicos) del tronco de árboles de 
+#cerezos. Intentaremos ajustar un modelo de regresión lineal simple para predecir el volumen en función del diámetro.
 library(dplyr)
 head(trees)
 
 glimpse(trees) #bien clasificadas
 summary(trees)
-# Volume es la variable de inter�s
+# Volume es la variable de interés
 ### Correlaciones
 corr=round(cor(trees),2)
 
@@ -52,7 +55,7 @@ pairs.panels(trees,
              ellipses = TRUE # show correlation ellipses
 )
 
-#alta correlaci�n entre VOlume y Girth
+#alta correlación entre VOlume y Girth
 
 ########### Modelo Lineal
 
@@ -64,12 +67,12 @@ summary(modelo_lineal)
 # Intervalos de confianza
 confint(modelo_lineal)
 
-#Representaci�n gr�fica
+#Representación gráfica
 
 ggplot(data = trees, mapping = aes(x = Girth, y = Volume)) +
   geom_point(color = "firebrick", size = 2) +
   geom_smooth(method = "lm", se = TRUE, color = "black") +
-  labs(title = "Volumen ~ Di�metro", x = "Di�metro", y = "Volumen") +
+  labs(title = "Volumen ~ Diámetro", x = "Diámetro", y = "Volumen") +
   theme_bw() + theme(plot.title = element_text(hjust = 0.5)) 
 
 ###############Supuestos del modelo
@@ -91,7 +94,7 @@ grid.arrange(plot1)
 ########### Normalidad ############
 
 
-###### Muestra peque�a
+###### Muestra pequeña
 #H0: Los residuos son normales
 dim(trees)
 shapiro.test(residuals(modelo_lineal))
@@ -113,8 +116,8 @@ qqline(modelo_lineal$residuals)
 ########### Homocedasticidad (Breush-pagan)
 
 library(lmtest)
-#Si el p-valor es grande aceptar�amos que hay igualdad de varianzas.
-# H0: Homocedasicidad (�sto es, la varianza de los residuos es constante)
+#Si el p-valor es grande aceptaríamos que hay igualdad de varianzas.
+# H0: Homocedasicidad (ésto es, la varianza de los residuos es constante)
 
 bptest(modelo_lineal, studentize = FALSE)
 ggplot(data = trees, aes(modelo_lineal$fitted.values, modelo_lineal$residuals)) +
@@ -125,12 +128,12 @@ ggplot(data = trees, aes(modelo_lineal$fitted.values, modelo_lineal$residuals)) 
 
 
 
-########## Autocorrelaci�n (durbin-Watson)
+########## Autocorrelación (durbin-Watson)
 
 
 dwtest(modelo_lineal, alternative= "two.sided")
 acf(modelo_lineal$residuals)
-#Si el p-valor es peque�o rechazar�amos la hip�tesis de independencia.
+#Si el p-valor es pequeño rechazaríamos la hipótesis de independencia.
 
 
 
