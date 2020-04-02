@@ -1,0 +1,45 @@
+• lm(y ~ x, data) -> Modelo de regresión lineal simple
+
+• lm(y ~ x1 + x2 + x3 ..., data) -> Modelo de regresión lineal múltiple
+
+• lm(y ~ x1 + x2 + x3...+0, data) -> Modelo sin ordenada en el origen
+
+• lm(y ~ 1, data) -> Modelo nulo (sin predictores). La predicción es la media de y
+
+• summary(modelo) -> Resumen del modelo
+
+• contrasts(variable) -> Variables dummy que R ha generado para cada nivel de una variable cualitativa
+
+• step(modelo) -> Selección de predictores por stepwise y AIC
+
+• update() -> Reajustar y actualizar el modelo
+
+• confint(modelo) -> Intervalos de confianza para los coeficientes del modelo
+
+• plot(modelo) -> Análisis de los residuos (distribución, variabilidad…)
+
+• shapiro.test(modelo$residuals) -> Test de hipótesis de Shapiro Wilk para el análisis de normalidad
+
+• plot(predict(modelo), rstudent(modelo)) -> Residuos estudentizados para detección de outliers o puntos influyentes
+
+• bptest(modelo) -> Test de contraste de homocedasticidad Breusch-Pagan
+
+• influence.measures(modelo) -> Detección de observaciones influyentes
+
+• influencePlot(modelo) -> Visualización de observaciones influyentes
+
+• outlierTest(modelo) -> Test de detección de outliers
+
+• rstudent(modelo) -> Cálculo de residuos estudentizados
+
+ • predict() -> Predicciones de nuevas observaciones a partir del modelo
+
+• vif(modelo) -> Calcula VIFs (factor de inflación de la varianza)
+
+• poly(x = , degree = ) -> Añadir términos polinómicos al modelo
+
+• * , : -> Interacción entre variables
+
+• log(x), vx, x2 -> Transformaciones de variables
+
+• anova(modelo1, modelo2) -> Comparar modelos (anidados)
