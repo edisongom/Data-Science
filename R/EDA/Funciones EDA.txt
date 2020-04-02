@@ -1,0 +1,27 @@
+• head(datos) -> Inspeccionar primeras observaciones del set de datos
+
+• glimpse(datos) -> Estructura del set de datos (parecido a str())
+
+• summary(datos) -> Resumen del set de datos (datos numéricos de las variables)
+
+• pairs(datos) -> Gráficos dispersión del conjunto de variables
+
+• cor() -> Calcula los coeficientes de correlación entre variables (solo acepta vectores numéricos)
+
+• corrplot() -> Representación gráfica de los coeficientes de correlación
+
+• cor.test() -> Test de correlación (“pearson”, “kendall”, “spearman”)
+
+• ggpairs() -> Combina en un único gráfico diagramas de dispersión, distribución de las variables y los valores de correlación.
+
+• fix() -> Muestra la matriz de datos en una nueva ventana
+
+• scatterplot3d()-> Nube de puntos tridimensional
+
+• kable()-> Genera una tabla sencilla a partir de una matriz o data frame
+
+• hist() y curve()/lines() -> Histograma y curva
+
+• is.na() -> Identifica observaciones incompletas.
+
+• na.omit() -> Elimina todas las observaciones (filas) que contienen observaciones incompletas en cualquier variable.
